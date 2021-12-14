@@ -1,4 +1,6 @@
-import { Entity, Column, PrimaryColumn, CreateDateColumn, UpdateDateColumn } from "typeorm";
+import { Entity, Column, PrimaryColumn, CreateDateColumn, UpdateDateColumn, OneToMany, ManyToMany, JoinTable } from "typeorm";
+import { Banker } from "./Banker";
+import { Transaction } from "./Transaction";
 import { Person } from "./utils/Person";
 
 @Entity('client')
@@ -36,4 +38,15 @@ export class Client extends Person{
 
     @UpdateDateColumn()
     updated_at: Date
+
+    @OneToMany(
+        () => Transaction,
+        transaction => transaction.client
+    )
+    transaction: Transaction[]
+
+    @ManyToMany(
+        ()=> Banker,
+    )
+    bankers: Banker[]
 }
