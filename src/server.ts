@@ -1,4 +1,5 @@
 import { createConnection } from "typeorm"
+import { Client } from "./entities/Client"
 const main = async () => {
     try {
         const connection = await createConnection({
@@ -7,7 +8,9 @@ const main = async () => {
             port: 5432,
             username: 'docker',
             password: 'ignite',
-            database: 'rentx'
+            database: 'rentx',
+            entities: [Client],
+            synchronize: true
         })
         console.log('Connection successfully to postgres..')
     } catch (error) {
