@@ -1,0 +1,28 @@
+{
+  "name": "typeormyoutube",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch './**/*.ts' --exec 'ts-node' src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EDUSSBR/typeORM.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EDUSSBR/typeORM/issues"
+  },
+  "homepage": "https://github.com/EDUSSBR/typeORM#readme",
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "express": "^4.17.1",
+    "pg": "^8.7.1",
+    "ts-node": "^10.4.0",
+    "typeorm": "^0.2.41",
+    "typescript": "^4.5.4"
+  }
+}
